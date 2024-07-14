@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petfinder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        .route {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .method {
+            font-weight: bold;
+            color: #d9534f;
+        }
+    </style>
+</head>
+<body>
+    <h1>Petfinder</h1>
+    <p>O Petfinder é uma aplicação web que ajuda a encontrar pets perdidos na vizinhança. A aplicação permite a criação de usuários, autenticação, postagem de informações sobre pets perdidos e busca por pets perdidos.</p>
+    
+    <h2>Rotas</h2>
+    <ul>
+        <li class="route">
+            <h3>Criação de Usuário</h3>
+            <p><span class="method">POST</span> /api/users</p>
+            <p>Descrição: Cria um novo usuário.</p>
+            <p>Corpo da Requisição:</p>
+            <pre>{
+    "username": "string",
+    "email": "string",
+    "password": "string"
+}</pre>
+        </li>
+        <li class="route">
+            <h3>Autenticação</h3>
+            <p><span class="method">POST</span> /api/auth</p>
+            <p>Descrição: Autentica um usuário e retorna um token JWT.</p>
+            <p>Corpo da Requisição:</p>
+            <pre>{
+    "email": "string",
+    "password": "string"
+}</pre>
+        </li>
+        <li class="route">
+            <h3>Cadastro de Pets Perdidos</h3>
+            <p><span class="method">POST</span> /api/pets</p>
+            <p>Descrição: Permite que um usuário autenticado cadastre um pet perdido.</p>
+            <p>Corpo da Requisição:</p>
+            <pre>{
+    "name": "string",
+    "description": "string",
+    "location": "string",
+    "contact": "string"
+}</pre>
+        </li>
+        <li class="route">
+            <h3>Informar sobre Pet Perdido</h3>
+            <p><span class="method">POST</span> /api/pets/:id/information</p>
+            <p>Descrição: Permite que um usuário autenticado poste informações adicionais sobre um pet perdido.</p>
+            <p>Corpo da Requisição:</p>
+            <pre>{
+    "information": "string"
+}</pre>
+        </li>
+        <li class="route">
+            <h3>Buscar Pets Perdidos</h3>
+            <p><span class="method">GET</span> /api/pets</p>
+            <p>Descrição: Busca por pets perdidos na vizinhança.</p>
+            <p>Parâmetros de Consulta (Query Params):</p>
+            <pre>?location=string&radius=number</pre>
+        </li>
+    </ul>
+</body>
+</html>
