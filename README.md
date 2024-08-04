@@ -13,3 +13,6 @@ npm start
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Link do swagger.
+https://app.swaggerhub.com/apis/THYAGOPEREIRASILVA/petfinder/1.0.0
