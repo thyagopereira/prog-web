@@ -7,7 +7,7 @@ services:
    volumes:
     - pgdata:/var/lib/postgresql/data
    environment:
-     POSTGRES_PASSWORD: postgresqlthyago
+    POSTGRES_PASSWORD: postgresqldev
    ports:
      - 5432:5432
    logging:
